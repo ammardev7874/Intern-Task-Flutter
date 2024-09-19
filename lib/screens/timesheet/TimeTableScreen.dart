@@ -1,0 +1,202 @@
+import 'package:flutter/material.dart';
+import 'package:interntask/widgets/appbar.dart';
+
+class TimeTableScreen extends StatefulWidget {
+  const TimeTableScreen({Key? key}) : super(key: key);
+
+  @override
+  State<TimeTableScreen> createState() => _TimeTableScreenState();
+}
+
+class _TimeTableScreenState extends State<TimeTableScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      backgroundColor:Color(0xFFF2F2F2) ,
+      appBar: AppBarWidget(        leadingImagePath: "assets/images/ProfilePic (1).png", title: 'Home',
+        searchIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_sharp)), notificationIcon: IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none_sharp)),),
+      body: Container(width: width,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(width: width,
+                child: Card(elevation: 5,
+                shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(0), // Set your desired radius here
+  ),
+
+                color: Colors.white,
+                
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              SizedBox(height: height*0.01,),
+Container(
+      height: height * 0.04,
+      color: Colors.white,
+      alignment: Alignment.centerLeft,
+      padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+      child: Text(
+        "Dec 1 - Dec 7",
+        style: TextStyle(
+          fontSize: width * 0.045,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ),                    
+Container(
+      height: height * 0.03,
+      color: Colors.white,
+      alignment: Alignment.centerLeft,
+      padding: EdgeInsets.symmetric(horizontal: width * 0.002),
+      child: Text(
+        "Total: 40:00",
+        style: TextStyle(
+          fontSize: width * 0.04,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    )                  ],
+                          ),
+                                                    SizedBox(width: width*0.3,),
+
+                          Icon(Icons.star_border_outlined,size: height*0.035,),
+                                                                              SizedBox(width: width*0.06,),
+
+                          Icon(Icons.arrow_back_ios,size: height*0.022,color: Color(0xff27AE60),),
+                                                                                                        SizedBox(width: width*0.06,),
+
+                                          Icon(Icons.arrow_forward_ios_sharp,size: height*0.022,color: Color(0xff27AE60),)
+                      
+                        ],
+                      ),
+                      Divider(thickness: height*0.0004,),
+                  Container(
+      height: height * 0.05,
+      color: Colors.white,
+      alignment: Alignment.centerLeft,
+      padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+      child: Text(
+        "TOTAL BY DAY",
+        style: TextStyle(
+          fontSize: width * 0.034,
+          fontWeight: FontWeight.w300,
+          color: Colors.black
+        ),
+      ),
+    ),
+                                  _buildDaysRow(height, width, const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']),
+                  _buildHoursRow(height, width, const ['8:00', '8:00', '8:00', '8:00', '8:00', '8:00', '8:00']),
+                  SizedBox(height: height*0.005,)
+                    ],
+                  ),
+                ),
+              ),
+        
+              _buildCard('Project x ', '16:00', Colors.purple, 
+                  const ['4:00', '6:00', '6:00', '--:--', '--:--', '--:--', '--:--'], height, width),
+              _buildCard('Vacation', '16:00', Colors.orange, 
+                  const ['--:--', '--:--', '--:--', '8:00', '8:00', '--:--', '--:--'], height, width),
+              _buildCard('Break', '4:00', Colors.blue, 
+                  const ['1:30', '1:00', '1:30', '--:--', '--:--', '--:--', '--:--'], height, width),
+              _buildCard('Office', '4:00', Colors.green, 
+                  const ['--:--', '--:--', '--:--', '--:--', '--:--', '--:--', '--:--'], height, width),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+
+
+  Widget _buildDaysRow(double height, double width, List<String> days) {
+    return Container(
+      height: height * 0.03,
+      padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: days.map((day) => Text(day,style: TextStyle(fontSize: height*0.018),)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildHoursRow(double height, double width, List<String> hours) {
+    return Container(
+      height: height * 0.03,
+      
+      padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: hours.map((hour) => Text(hour,style: TextStyle(fontSize: height*0.018),)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildCard(String title, String totalHours, Color color, List<String> hours, double height, double width) {
+    return Container(
+      width: width*0.97,
+    
+      child: Card(
+         shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(height*0.008), // Set your desired radius here
+  ),
+        elevation: 4,
+        color: Colors.white,
+        child: Column(
+          children: [
+                                    SizedBox(height: height * 0.01),
+
+            Row(
+              children: [
+                                                SizedBox(width: width*0.05,),
+
+                Container(width: width*0.2,
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: color,
+                      fontWeight: FontWeight.w500,
+                      fontSize: width * 0.043,
+                    ),
+                  ),
+                ),
+                                SizedBox(width: width*0.43,),
+
+                Container(width: width*0.12,
+                
+                  child: Text(
+                    totalHours,
+                    style: TextStyle(
+                      fontSize: width * 0.043,
+                      fontWeight: FontWeight.w600,
+                          
+                    ),
+                  ),
+                ),
+                                                SizedBox(width: width*0.033,),
+
+                IconButton(
+                  onPressed: () {},
+                  icon:  Icon(Icons.more_vert,size: height*0.033,),
+                ),
+              ],
+            ),
+            SizedBox(height: height * 0.01),
+            _buildDaysRow(height, width, const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']),
+            SizedBox(height: height * 0.01),
+            _buildHoursRow(height, width, hours),
+                        SizedBox(height: height * 0.02),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
