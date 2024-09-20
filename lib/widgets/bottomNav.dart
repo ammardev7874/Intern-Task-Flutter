@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:interntask/screens/approval.dart';
+import 'package:interntask/screens/approval/approvalnavbar.dart';
+import 'package:interntask/screens/approval/approvals.dart';
 import 'package:interntask/screens/home.dart';
 import 'package:interntask/screens/moremenu.dart';
 import 'package:interntask/screens/service.dart';
-import 'package:interntask/screens/service/service.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
   final List<Widget> _screens = [
     ServiceScreen(),     // Services Screen (index 0)
     MyHomePage(),        // Home Screen (index 1)
-    ApprovalScreen(),    // Approval Screen (index 2)
+    ApprovalNavBar(),    // Approval Screen (index 2)
     MoreScreen(),        // More Screen (index 3)
   ];
 

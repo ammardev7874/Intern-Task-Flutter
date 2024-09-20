@@ -1,10 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:interntask/screens/TimeTableScreen.dart';
-import 'package:interntask/screens/company/Reports.dart';
+import 'package:interntask/screens/timesheet/TimeTableScreen.dart';
 import 'package:interntask/screens/company/organization.dart';
 import 'package:interntask/screens/leave/leaveNavbar.dart';
+import 'package:interntask/screens/timesheet/addEntry.dart';
 import 'package:interntask/widgets/appbar.dart';
 
 class ServiceScreen extends StatefulWidget {
@@ -118,6 +118,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
           } else if(title=='ORGANIZATION'){  Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => OrganizationNav()),
+            );}
+            else if(title=='PERFORMANCE'){  Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AddEntry()),
             );}
           // Add similar conditions for other titles and screens
         },
