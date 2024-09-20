@@ -15,7 +15,10 @@ class _ApprovalNavBarState extends State<ApprovalNavBar> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(
+      backgroundColor: Colors.white,
+
+      appBar: AppBar(      backgroundColor: Colors.white,
+
         title: Text('Tap to Change Container'),
       ),
       body: Column(
@@ -64,7 +67,7 @@ class _ApprovalNavBarState extends State<ApprovalNavBar> {
                     :
                     Container(
                       child: Row(children: [
-                        Container(height: height*0.009,width: width*0.018,decoration: BoxDecoration(borderRadius: BorderRadius.circular(height*0.1),color: Colors.green),),SizedBox(width:width*0.03,),Text("Casual",style: TextStyle(fontSize: height*0.017,color: Color(0xffEFB524)),)],),
+                        Container(height: height*0.009,width: width*0.018,decoration: BoxDecoration(borderRadius: BorderRadius.circular(height*0.1),color: Color(0xffEFB524)),),SizedBox(width:width*0.03,),Text("Casual",style: TextStyle(fontSize: height*0.017,color: Color(0xff898787)),)],),
                     
                     )
                  ),
@@ -82,8 +85,9 @@ class _ApprovalNavBarState extends State<ApprovalNavBar> {
                     
                     :
                     Container(
-                      child: Row(children: [
-                        Container(height: height*0.009,width: width*0.018,decoration: BoxDecoration(borderRadius: BorderRadius.circular(height*0.1),color: Color(0xff7C83F6)),),SizedBox(width:width*0.03,),Text("Sick",style: TextStyle(fontSize: height*0.017,color: Color(0xff898787)),)   ,                       SizedBox(width: width*0.08,),
+                      child: Row(children: [ 
+                     SizedBox(width: width*0,),
+ Container(height: height*0.009,width: width*0.018,decoration: BoxDecoration(borderRadius: BorderRadius.circular(height*0.1),color: Color(0xff7C83F6)),),SizedBox(width:width*0.03,),Text("Sick",style: TextStyle(fontSize: height*0.017,color: Color(0xff898787)),)   ,                       SizedBox(width: width*0.08,),
 ],),
                     
                     )
