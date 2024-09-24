@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:interntask/widgets/appbar.dart';
 
@@ -8,8 +7,26 @@ class ApprovalScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xFFF2F2F2),
-        appBar: AppBarWidget(        leadingImagePath: "assets/images/ProfilePic (1).png", title: 'Home',
-        searchIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_sharp)), notificationIcon: IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none_sharp)),),
+          appBar: CustomAppBar(
+        title: 'Services',
+        imagePath: 'assets/images/ProfilePic (1).png',
+        leftIcon: null,
+         // Optional left icon
+        onLeftIconPressed: () {
+          // Handle left icon press
+          print('Left icon pressed');
+        },
+        rightIcon1: Icons.search,
+        rightIcon2: Icons.notifications_none,
+        onRightIcon1Pressed: () {
+          // Handle first right icon press
+          print('Search icon pressed');
+        },
+        onRightIcon2Pressed: () {
+          // Handle second right icon press
+          print('Notifications icon pressed');
+        },
+      ),
         body: GridView.count(
           crossAxisCount: 2,
           children: [

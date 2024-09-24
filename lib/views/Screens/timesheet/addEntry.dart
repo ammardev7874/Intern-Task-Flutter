@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interntask/widgets/appbar.dart';
 import 'package:intl/intl.dart';
 import 'package:time_picker_spinner/time_picker_spinner.dart';
 
@@ -36,9 +37,26 @@ class _AddEntryState extends State<AddEntry> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Time Entry'),
+      backgroundColor: Color(0xFFF2F2F2),
+            appBar: CustomAppBar(
+        title: 'NEW LEAVE',
+        imagePath: "ll",
+        leftIcon: Icons.arrow_back_sharp,
+         // Optional left icon
+        onLeftIconPressed: () {
+          // Handle left icon press
+          print('Left icon pressed');
+        },
+        rightIcon1: null,
+        rightIcon2: null,
+        onRightIcon1Pressed: () {
+          // Handle first right icon press
+          print('Search icon pressed');
+        },
+        onRightIcon2Pressed: () {
+          // Handle second right icon press
+          print('Notifications icon pressed');
+        },
       ),
       body: Center(
         child: SingleChildScrollView(

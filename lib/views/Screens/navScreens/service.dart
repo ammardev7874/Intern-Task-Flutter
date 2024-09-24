@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:interntask/screens/timesheet/TimeTableScreen.dart';
 import 'package:interntask/screens/company/organization.dart';
@@ -22,8 +20,26 @@ class _ServiceScreenState extends State<ServiceScreen> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBarWidget(        leadingImagePath: "assets/images/ProfilePic (1).png", title: 'Home',
-        searchIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_sharp)), notificationIcon: IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none_sharp)),),
+      appBar: CustomAppBar(
+        title: 'Services',
+        imagePath: 'assets/images/ProfilePic (1).png',
+        leftIcon: null,
+         // Optional left icon
+        onLeftIconPressed: () {
+          // Handle left icon press
+          print('Left icon pressed');
+        },
+        rightIcon1: Icons.search,
+        rightIcon2: Icons.notifications_none,
+        onRightIcon1Pressed: () {
+          // Handle first right icon press
+          print('Search icon pressed');
+        },
+        onRightIcon2Pressed: () {
+          // Handle second right icon press
+          print('Notifications icon pressed');
+        },
+      ),
       backgroundColor: Color(0xFFF2F2F2),
       body: Column(
         children: [
@@ -36,25 +52,34 @@ class _ServiceScreenState extends State<ServiceScreen> {
             child: Row(
               children: [
                 Container(
-                  width: width * 0.77, // 70% of screen width
-                  height: height * 0.047, // 5% of screen height
+                  width: width * 0.77, // 77% of screen width
+                  height: height * 0.05, // 5% of screen height
                   child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, color: Colors.grey[600]),
-                      hintText: 'Search',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(width * 0.06), // 6% of screen width
-                        borderSide: BorderSide.none,
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
-                    ),
-                  ),
+  decoration: InputDecoration(
+    prefixIcon: Icon(Icons.search, color: Colors.grey[600]),
+    hintText: "Search",
+    hintStyle: TextStyle(
+      fontSize: 14, // Set the hint text size a little smaller
+      color: Color(0xFFCCCCCC), // Set hint text color to 0xcccccc
+    ),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(width * 0.06), // 6% of screen width
+      borderSide: BorderSide.none,
+    ),
+    filled: true,
+    fillColor: Colors.white,
+  ),
+  style: TextStyle(
+    fontSize: height*0.023, // Set the actual input text size a little smaller
+    color: Color(0xFFCCCCCC), // Set input text color to 0xcccccc
+  ),
+),
+
                 ),
-                SizedBox(width: width * 0.04), // 9% of screen width
+                SizedBox(width: width * 0.04), // 4% of screen width
                 Container(
                   height: height * 0.047, // 5% of screen height
-                  width: width * 0.1, // 5.5% of screen height
+                  width: width * 0.1, // 10% of screen width
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(height * 0.03), // 3% of screen height
                     color: Colors.white,
@@ -115,14 +140,17 @@ class _ServiceScreenState extends State<ServiceScreen> {
               context,
               MaterialPageRoute(builder: (context) => TimeTableScreen()),
             );
-          } else if(title=='ORGANIZATION'){  Navigator.push(
+          } else if (title == 'ORGANIZATION') {
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => OrganizationNav()),
-            );}
-            else if(title=='PERFORMANCE'){  Navigator.push(
+            );
+          } else if (title == 'PERFORMANCE') {
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => AddEntry()),
-            );}
+            );
+          }
           // Add similar conditions for other titles and screens
         },
         child: Column(
@@ -138,7 +166,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
             Text(
               title,
               style: TextStyle(
-                fontSize: width * 0.04, // 4% of screen width
+                fontSize: width * 0.033, // 4% of screen width
               ),
             ),
           ],

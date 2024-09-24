@@ -39,6 +39,8 @@ dependencies:
   google_fonts: ^6.2.1
   intl: ^0.19.0
   time_picker_spinner: ^1.0.0
+  syncfusion_flutter_calendar: ^27.1.48
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:

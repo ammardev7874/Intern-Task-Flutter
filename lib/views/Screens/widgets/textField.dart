@@ -26,9 +26,9 @@ class LabeledTextField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
+          style:  TextStyle(
             color: Colors.black,
-            fontSize: 23,
+            fontSize: height*0.025,
             fontFamily: "Montserrat",
             fontWeight: FontWeight.w400,
           ),
@@ -43,15 +43,15 @@ class LabeledTextField extends StatelessWidget {
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(13.0),
-                borderSide: const BorderSide(color: Colors.black, width: 1.2),
+                borderSide: const BorderSide(color: Colors.black, width: 0.7),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(13.0),
-                borderSide: const BorderSide(color: Colors.black, width: 1),
+                borderSide: const BorderSide(color: Colors.black, width: 0.7),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(13.0),
-                borderSide: const BorderSide(color: Colors.black, width: 2),
+                borderSide: const BorderSide(color: Colors.black, width: 0.7),
               ),
               contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Add padding inside the TextField
             ),

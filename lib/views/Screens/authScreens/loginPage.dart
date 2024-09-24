@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:interntask/screens/home.dart';
 import 'package:interntask/widgets/bottomNav.dart';
-import 'package:interntask/widgets/customPainter.dart';
+import 'package:interntask/widgets/customBottomNav.dart';
 import 'package:interntask/widgets/textField.dart';
 import '../widgets/button.dart';
 
@@ -117,7 +119,7 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BottomNav()),
+                        MaterialPageRoute(builder: (context) => const BottomNav()),
                       );
                     },
                     text: 'Login',

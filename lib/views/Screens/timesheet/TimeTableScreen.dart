@@ -43,12 +43,25 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
 
     return Scaffold(
       backgroundColor: Color(0xFFF2F2F2),
-      appBar: AppBarWidget(
-        leadingImagePath: "assets/images/ProfilePic (1).png",
-        title: 'Home',
-        searchIcon: IconButton(onPressed: () {}, icon: Icon(Icons.search_sharp)),
-        notificationIcon:
-            IconButton(onPressed: () {}, icon: Icon(Icons.notifications_none_sharp)),
+        appBar: CustomAppBar(
+        title: 'Time Sheet',
+        imagePath: 'null',
+        leftIcon: Icons.arrow_back_sharp,
+         // Optional left icon
+        onLeftIconPressed: () {
+          // Handle left icon press
+          print('Left icon pressed');
+        },
+        rightIcon1: Icons.search,
+        rightIcon2: Icons.notifications_none,
+        onRightIcon1Pressed: () {
+          // Handle first right icon press
+          print('Search icon pressed');
+        },
+        onRightIcon2Pressed: () {
+          // Handle second right icon press
+          print('Notifications icon pressed');
+        },
       ),
       body: Container(
         width: width,
@@ -58,11 +71,11 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
               Container(
                 width: width,
                 child: Card(
-                  elevation: 5,
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(0),
                   ),
-                  color: Colors.white,
+                  color: Color(0xFFF2F2F2),
                   child: Column(
                     children: [
                       Row(
@@ -72,26 +85,26 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                               SizedBox(height: height * 0.01,),
                               Container(
                                 height: height * 0.04,
-                                color: Colors.white,
+                                color: Color(0xFFF2F2F2),
                                 alignment: Alignment.centerLeft,
                                 padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                                 child: Text(
                                   "Dec 1 - Dec 7",
                                   style: TextStyle(
-                                    fontSize: width * 0.045,
+                                    fontSize: width * 0.04,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
                               Container(
                                 height: height * 0.03,
-                                color: Colors.white,
+                                color: Color(0xFFF2F2F2),
                                 alignment: Alignment.centerLeft,
                                 padding: EdgeInsets.symmetric(horizontal: width * 0.002),
                                 child: Text(
                                   "Total: 40:00",
                                   style: TextStyle(
-                                    fontSize: width * 0.04,
+                                    fontSize: width * 0.035,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -112,7 +125,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                       Divider(thickness: height * 0.0004,),
                       Container(
                         height: height * 0.05,
-                        color: Colors.white,
+                        color: Color(0xFFF2F2F2),
                         alignment: Alignment.centerLeft,
                         padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                         child: Text(
@@ -129,6 +142,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                       SizedBox(height: height * 0.005,)
                     ],
                   ),
+                  
                 ),
               ),
               ListView.builder(

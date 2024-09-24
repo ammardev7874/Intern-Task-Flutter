@@ -6,10 +6,19 @@ class CustomAppBarHome extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('Home'),
+      title:  Text('Home'),
       backgroundColor: Colors.transparent,
       elevation: 0,
-      leading: Container(height: 50,width: 50,decoration: BoxDecoration(borderRadius: BorderRadius.circular(100),),child: Image.asset("assets/images/ProfilePic.png",),),
+      leading: Container(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+        ),
+        child: Image.asset(
+          "assets/images/ProfilePic.png",
+        ),
+      ),
       actions: [
         IconButton(
           icon: const Icon(Icons.search),

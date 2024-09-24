@@ -54,7 +54,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
               ),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 0),
-                height: _isAttendanceExpanded ? height * 0.2 : 0, // Responsive height
+                height: _isAttendanceExpanded ? height * 0.25 : 0, // Responsive height
                 child: Visibility(
                   visible: _isAttendanceExpanded,
                   child: Row(
@@ -120,7 +120,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
               ),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 10),
-                height: _isSalaryExpanded ? height * 0.22 : 0, // Responsive height
+                height: _isSalaryExpanded ? height * 0.25 : 0, // Responsive height
                 child: Visibility(
                   visible: _isSalaryExpanded,
            child: Row(
@@ -187,7 +187,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
               ),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 10),
-                height: _isNotesExpanded ? height * 0.22 : 0, // Responsive height
+                height: _isNotesExpanded ? height * 0.25 : 0, // Responsive height
                 child: Visibility(
                   visible: _isNotesExpanded,
    child: Row(
@@ -253,7 +253,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
               ),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 10),
-                height: _isEmployeeListExpanded ? height * 0.22 : 0, // Responsive height
+                height: _isEmployeeListExpanded ? height * 0.25 : 0, // Responsive height
                 child: Visibility(
                   visible: _isEmployeeListExpanded,
    child: Row(

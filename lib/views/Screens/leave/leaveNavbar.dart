@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:interntask/screens/leave/history.dart';
 import 'package:interntask/screens/leave/pendingReq.dart';
 import 'package:interntask/widgets/appbar.dart';
-import 'package:interntask/widgets/selecteditem.dart';
+ import 'package:interntask/widgets/selecteditem.dart';
 
 class LeaveNavBar extends StatefulWidget {
   @override
@@ -25,11 +25,25 @@ class _LeaveNavBarState extends State<LeaveNavBar> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBarWidget(
-        leadingImagePath: "assets/images/ProfilePic (1).png",
-        title: 'Home',
-        searchIcon: IconButton(onPressed: () {}, icon: Icon(Icons.search_sharp)),
-        notificationIcon: IconButton(onPressed: () {}, icon: Icon(Icons.notifications_none_sharp)),
+     appBar: CustomAppBar(
+        title: 'Company Requests',
+        imagePath: 'null',
+        leftIcon: Icons.arrow_back_sharp,
+         // Optional left icon
+        onLeftIconPressed: () {
+          // Handle left icon press
+          print('Left icon pressed');
+        },
+        rightIcon1: Icons.search,
+        rightIcon2: Icons.notifications_none,
+        onRightIcon1Pressed: () {
+          // Handle first right icon press
+          print('Search icon pressed');
+        },
+        onRightIcon2Pressed: () {
+          // Handle second right icon press
+          print('Notifications icon pressed');
+        },
       ),
       body: Column(
         children: [
